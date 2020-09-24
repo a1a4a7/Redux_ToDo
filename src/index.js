@@ -1,31 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import AddPage from './components/AddPage/AddPage';
+// import App from './App';
+// import AddPage from './components/AddPage/AddPage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducers from './reducers/index';
+// import rootReducers from './reducers/index';
 import { composeWithDevTools } from "redux-devtools-extension";
 
 
 
-const store = createStore(rootReducers, composeWithDevTools())
+// const store = createStore(rootReducers, composeWithDevTools())
 
 
-ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <h1>I'm a TodoList-Redux</h1>
+/* 
+
       <Route path="/" exact component={AddPage} />
       <Route path="/App" exact component={App} />
+*/
+
+ReactDOM.render(
+  // <Provider store={store}>
+    <BrowserRouter>
+      <h1>I'm a TodoList-Redux</h1>
 
 
 
     </BrowserRouter>
-  </Provider>
+  // </Provider>
   ,
 
   document.getElementById('root')
