@@ -3,7 +3,8 @@ import './App.css';
 import Table from '../Add_Item_table/Table';
 import { Link } from 'react-router-dom';
 import SideTab from '../SideTab/SideTab';
-
+import SearchBar from '../SearchBar/SearchBar'
+import PopUp from '../PopUp/PopUp'
 
 function App() {
   const styleLink = document.createElement("link");
@@ -15,7 +16,7 @@ function App() {
         <RemoveComponent /> */
   return (
     <div className="App">
-      <div>I am a serarch bar</div>
+      <SearchBar />
 
       <div className="title">I'am App</div>
       <div className="row">
@@ -28,6 +29,7 @@ function App() {
         <Table></Table>
       </div>
 
+      <PopUp />
     </div>
   );
 }

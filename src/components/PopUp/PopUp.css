@@ -1,0 +1,17 @@
+.popup {  
+  position: fixed;  
+  border: solid 1px;
+  width: 200px;
+  bottom: 100px; 
+}  
+.popup\_inner {  
+  position: absolute;  
+ 
+  margin: auto;  
+  border-radius: 20px;  
+  background: white;  
+}
+
+.noshow{
+    display: none;
+}

@@ -1,6 +1,6 @@
 
 
-let nextTodoId = 1
+let nextTodoId = 5
 
 
 export const addTodo = (text) => ({
@@ -13,4 +13,27 @@ export const addTodo = (text) => ({
 export const statChange = (activeAddTab) => ({
     type: 'STAT_CHANGE',
     activeAddTab
+})
+
+export const searchAction = (value) => {
+    return (
+        {
+            type: 'SEARCH_ACTION',
+            value
+        }
+    )
+}
+
+export const flagAction = () => ({
+    type: 'FLAG_ACTION'
+})
+
+export const setFlagAction = () => ({
+    type: 'FLAG_ACTION2'
+})
+
+
+export const deleteAction = (id) => ({
+    type: 'DELETE',
+    id
 })
