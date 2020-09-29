@@ -9,3 +9,8 @@ export const addTodo = (text) => ({
     text: text.iinput,
     descr: text.iinput2
 })
+
+export const statChange = (activeAddTab) => ({
+    type: 'STAT_CHANGE',
+    activeAddTab
+})

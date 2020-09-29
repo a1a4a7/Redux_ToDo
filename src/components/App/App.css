@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.row {
+  margin-left: 10px;
+  border: solid 1px;
+  float: left;
+  width: 25%;
+  height: 300px;
+}
+
+.row1 {
+  margin-left: 5px;
+  border: solid 1px;
+  height: 300px;
+
+  float: left;
+  width: 65%;
+}

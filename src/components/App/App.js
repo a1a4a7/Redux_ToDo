@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
-// import AddComponent from './components/AddComponent/AddComponent';
-// import RemoveComponent from './components/RemoveComponent/RemoveComponent';
-// import ModalExampleShorthand from './components/Modals/AddModal/AddModal';
-
+import Table from '../Add_Item_table/Table';
+import { Link } from 'react-router-dom';
+import SideTab from '../SideTab/SideTab';
 
 
 function App() {
@@ -16,8 +15,18 @@ function App() {
         <RemoveComponent /> */
   return (
     <div className="App">
-      <span className="title">I'am App</span>
+      <div>I am a serarch bar</div>
 
+      <div className="title">I'am App</div>
+      <div className="row">
+        <span>a side Column</span>
+        <SideTab></SideTab>
+        <div><Link to="/">Go To Add Page</Link></div>
+      </div>
+
+      <div className="row1">
+        <Table></Table>
+      </div>
 
     </div>
   );

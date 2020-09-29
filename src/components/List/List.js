@@ -1,46 +1,59 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import CloseIcon from '@material-ui/icons/Close';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import { connect } from 'react-redux';
+import './List.css'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
+const ItemList = ({ props }) => {
+
+  console.log(props)
+  var items;
 
 
-export default function SimpleList(todo) {
+  if (props.todos.activeAddTab === true) {
 
-  console.log("print@SimpleList " + JSON.stringify(todo.todo.text))
-  // console.log("print@SimpleList " + typeof todo)
+    items = props.todos.addlist.map(data => {
+      return (
+        <li key={data.id}>
+          <span>id: {data.id} </span>
+          <span>text: {data.text} </span>
+          <span>descr: {data.descr} </span>
+          <span style={{
+            color: "red"
+          }} onClick={() => console.log('here')}>X</span>
+        </li>
+      )
+    })
+  }
 
-  const classes = useStyles();
+  else {
+
+    items = props.todos.deletedlist.map(data => {
+      return (
+
+        <li key={data.id}>
+          <span>id: {data.id} </span>
+          <span>text: {data.text} </span>
+          <span>descr: {data.descr} </span>
+        </li>
+      )
+    }
+    )
+
+  }
+
+
   return (
-    <div className={classes.root}>
-      <List component="nav" aria-label="main mailbox folders">
-
-        <ListItem button>
-          <ListItemText primary={todo.todo.id} />
-          <ListItemText primary={todo.todo.text} />
-
-          <FavoriteIcon />
-
-          <ListItemIcon>
-            <CloseIcon />
-          </ListItemIcon>
-        </ListItem>
-
-      </List>
-      <Divider />
-
-    </div >
-  );
+    <div>
+      <div>I am a list</div>
+      { items}
+    </div>
+  )
 }
+
+const mapStateToProps = state => ({
+  // props: { ...state }
+  props: state
+})
+
+const mapDispatchToProps = dispatch => ({})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemList)
